@@ -55,28 +55,28 @@ var CartoStyle = {
  * Change the value for veresion below for each style's new release
  */
 var bubblewrap = extend({
-  'stylePath': {value: 'bubble-wrap-style'},
-  'version': {value: 9}
+  'stylePath': { value: 'bubble-wrap-style' },
+  'version': { value: 9 }
 }, CartoStyle);
 
 var cinnabar = extend({
-  'stylePath': {value: 'cinnabar-style'},
-  'version': {value: 9}
+  'stylePath': { value: 'cinnabar-style' },
+  'version': { value: 9 }
 }, CartoStyle);
 
 var refill = extend({
-  'stylePath': {value: 'refill-style'},
-  'version': {value: 11}
+  'stylePath': { value: 'refill-style' },
+  'version': { value: 11 }
 }, CartoStyle);
 
 var walkabout = extend({
-  'stylePath': {value: 'walkabout-style'},
-  'version': {value: 7}
+  'stylePath': { value: 'walkabout-style' },
+  'version': { value: 7 }
 }, CartoStyle);
 
 var tron = extend({
-  'stylePath': {value: 'tron-style'},
-  'verseion': {value: 6}
+  'stylePath': { value: 'tron-style' },
+  'verseion': { value: 6 }
 }, CartoStyle);
 
 var zinc = extend({

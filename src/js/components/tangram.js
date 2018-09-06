@@ -2,7 +2,6 @@ var L = require('leaflet');
 var APIKeyCheck = require('./apiKeyCheck');
 var BasemapStyles = require('./basemapStyles');
 
-
 // This is the way to embed that Tangram team recommends to cut build time
 // https://github.com/tangrams/react-webpack-tangram-boilerplate/blob/57bdff6dd8bc3664df57673e59477b7e11635ee6/src/Map.jsx#L7
 
@@ -91,7 +90,6 @@ var TangramLayer = L.Class.extend({
       // Check if the API key is set on the params object
       if (source.url_params && source.url_params.api_key) {
         var apiKey = source.url_params.api_key;
-        var globalApi = scene.config.global ? scene.config.global.sdk_mapzen_api_key : '';
         // Check if the global property is valid
         if (apiKey === 'global.sdk_api_key') {
           valid = true;

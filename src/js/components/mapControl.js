@@ -33,7 +33,7 @@ var MapControl = L.Map.extend({
 
       // As of v1.0, scene will need to be part of tangramOptions
       if (this.options.scene) {
-        tangramOptions = L.extend({}, tangramOptions, {scene: this.options.scene});
+        tangramOptions = L.extend({}, tangramOptions, { scene: this.options.scene });
         console.warn('Mapzen.js warning: `options.scene` is deprecated and will be removed in v1.0. Please use `options.tangramOptions.scene`.');
       }
 
