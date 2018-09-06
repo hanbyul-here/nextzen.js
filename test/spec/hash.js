@@ -12,8 +12,7 @@ describe('Map Hash Test', function () {
   beforeEach(function () {
     el = document.createElement('div');
     document.body.appendChild(el);
-    L.Mapzen.apiKey = 'mapzen-cstHyBQ';
-    map = L.Mapzen.map(el,{
+    map = L.Nextzen.map(el,{
       _useTangram: false
     });
   });
@@ -25,7 +24,7 @@ describe('Map Hash Test', function () {
   describe('Hash Working', function () {
     it('checks that hash for coord is working', function () {
       map.setView([51.505, -0.09], 13);
-      var hash = L.Mapzen.hash({
+      var hash = L.Nextzen.hash({
         map: map
       });
       var zoom = hash._roundZDown(map.getZoom());
@@ -45,28 +44,5 @@ describe('Map Hash Test', function () {
       expect(hashVal).to.equal('#lat=' + hashLat + '&lng=' + hashLng + '&z=' + zoom);
     });
 
-    it('checks that hash for search result is working', function () {
-      var geocoder = L.Mapzen.geocoder();
-      geocoder.addTo(map);
-
-      var hash = L.Mapzen.hash({
-        geocoder: geocoder
-      });
-
-      geocoder.showResults(fakeResult.features, 'foo');
-
-      happen.once(geocoder._input, {
-        type: 'keydown',
-        keyCode: 40
-      })
-      happen.once(geocoder._input, {
-        type: 'keydown',
-        keyCode: 13
-      })
-      var encodedHashVal = encodeURIComponent(fakeResult.features[0].properties.gid);
-      var hashVal = window.location.hash;
-      hash._reset(); // For next test
-      expect(hashVal).to.equal('#place='+encodedHashVal);
-    });
   })
 });

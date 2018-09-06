@@ -9,8 +9,7 @@ describe('Map Control Test', function () {
     el = document.createElement('div');
     el.style.cssText = 'position: absolute; left: 0; top: 0; width: 100%; height: 100%;';
     document.body.appendChild(el);
-    L.Mapzen.apiKey = 'mapzen-cstHyBQ';
-    testMap = L.Mapzen.map(el);
+    testMap = L.Nextzen.map(el);
     spy = sinon.spy();
     testMap.addEventListener('tangramloaded', spy);
     testMap.setView([51.505, -0.09], 13);
@@ -23,7 +22,7 @@ describe('Map Control Test', function () {
   })
 
   describe('Tangram Version', function () {
-    // Mapzen Basemap styles require Tangram version number above
+    // Nextzen Basemap styles require Tangram version number above
     it('check Tangram version is above 0.13.1', function (done) {
 
       // House styles requires Tangram > 0.13.1
@@ -40,7 +39,7 @@ describe('Map Control Test', function () {
 
 
 
-      if (checkVersionNumber(L.Mapzen._tangram().version)) done();
+      if (checkVersionNumber(L.Nextzen._tangram().version)) done();
       else done(new Error('Tangram version is not met with required version number.'));
     });
   });

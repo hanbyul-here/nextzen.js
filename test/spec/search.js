@@ -3,24 +3,19 @@ describe('Search Test', function () {
   var map;
   var fakeResult;
 
-  before(function (done) {
-    L.Mapzen.apiKey = 'mapzen-cstHyBQ';
-    done();
-  })
-
   describe('Basic Geocoder Check', function () {
     it('checks geocoder is initialized', function (done) {
-      var geocoder = L.Mapzen.geocoder();
+      var geocoder = L.Nextzen.geocoder();
       done();
     });
 
     it('checks geocoder with api key is initialized', function (done) {
-      var geocoder = L.Mapzen.geocoder('mapzen-cstHyBQ');
+      var geocoder = L.Nextzen.geocoder('mapzen-cstHyBQ');
       done();
     });
 
     it('checks geocoder with option is initialized', function (done) {
-      var geocoder = L.Mapzen.geocoder({
+      var geocoder = L.Nextzen.geocoder({
         autocomplete: false,
         attribution: 'test attribution'
       });
@@ -28,7 +23,7 @@ describe('Search Test', function () {
     });
 
     it('checks geocoder with both api key and option is initialized', function (done) {
-      var geocoder = L.Mapzen.geocoder('mapzen-cstHyBQ', {
+      var geocoder = L.Nextzen.geocoder('mapzen-cstHyBQ', {
         autocomplete: false
       });
       done();

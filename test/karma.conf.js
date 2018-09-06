@@ -13,7 +13,7 @@ module.exports = function (config) {
       'node_modules/sinon/pkg/sinon.js',
       'node_modules/expect.js/index.js',
       'node_modules/happen/happen.js',
-      'dist/mapzen.js',
+      'dist/nextzen.js',
       'test/spec/*.js'
     ],
 
@@ -22,8 +22,7 @@ module.exports = function (config) {
       'karma-browserify',
       'karma-coverage',
       'karma-coveralls',
-      'karma-phantomjs-launcher',
-      'karma-browserstack-launcher'
+      'karma-phantomjs-launcher'
     ],
 
     // frameworks to use
@@ -46,11 +45,7 @@ module.exports = function (config) {
     browserify: {
       debug: true,
       transform: [ ['babelify', {
-        presets: 'es2015'}], ['browserify-istanbul', {
-          instrumenterConfig: {
-            embedSource: true
-          }
-        }]
+        presets: 'es2015' }]
       ]
     },
 
@@ -85,34 +80,6 @@ module.exports = function (config) {
     // how many browser should be started simultaneous
     concurrency: Infinity,
 
-    // browser stack
-    // global config of your BrowserStack account
-    browserStack: {
-      username: process.env.BROWSERSTACK_USERNAME,
-      accessKey: process.env.BROWSERSTACK_KEY
-    },
-    // Tweaks for Browserstack timeout
-    browserDisconnectTimeout: 60000, // default 2000
-    browserDisconnectTolerance: 1, // default 0
-    browserNoActivityTimeout: 4 * 60 * 1000, // default 10000,
-    captureTimeout: 4 * 60 * 1000, // default 60000
-    // define browsers
-    customLaunchers: {
-      bs_ie_window: {
-        base: 'BrowserStack',
-        browser: 'IE',
-        browser_version: '11',
-        os: 'Windows',
-        os_version: '10'
-      },
-      bs_iphone6S: {
-        base: 'BrowserStack',
-        device: 'iPhone 6S',
-        os: 'ios',
-        os_version: '9.0'
-      }
-    },
-
-    browsers: ['PhantomJS', 'bs_ie_window', 'bs_iphone6S']
+    browsers: ['PhantomJS']
   });
 };
